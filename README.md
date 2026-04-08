@@ -8,24 +8,23 @@ Built with Python, Textual, and LangChain DeepAgents, Socratic-PM enforces devel
 
 - [ ] **Phase 1: Concurrency Runtime & TUI**
   - [ ] Asynchronous LangChain DeepAgents background worker queue.
-  - [ ] Terminal UI (Textual) with a dedicated code viewer and editor layout.
+  - [ ] Terminal UI (Textual) with basic chat, code viewer, and editor layout.
+  - [ ] DeepAgents skills middleware for basic slash commands.
+
+- [ ] **Phase 2: Environment Governance & Data Pipelines**
   - [ ] Real-time environment telemetry (Git status, package managers, tool configs).
-  - [ ] DeepAgents skills middleware for slash commands (e.g., `/npm`, `/docs`).
+  - [ ] Package and config parsers to map dependencies (serves as the data ingestion pipeline for GraphRAG).
+  - [ ] TUI configuration panes and environment status dashboard.
 
-- [ ] **Phase 2: Project Management & Orchestration**
-  - [ ] GitHub MCP integration for issue generation.
-  - [ ] Deterministic Markdown AST parsing (reads `docs/` as the single source of truth).
-  - [ ] Automated Git lifecycle management and task resolution tracking (PRs mapped to checklist items).
-
-- [ ] **Phase 3: Educational Constraint Engine (Socratic Method)**
-  - [ ] Strict output constraints: AI explains code and provides schemas, but does not overwrite core backend logic.
-  - [ ] Guided architectural planning skills executed layer-by-layer.
-  - [ ] Structural codebase breakdowns and function mapping.
-
-- [ ] **Phase 4: Knowledge Graph (GraphRAG)**
+- [ ] **Phase 3: Knowledge Graph & Socratic Engine**
   - [ ] Neo4j-backed database separating generic documentation from exact API references.
-  - [ ] GraphRAG query injection into sub-agent GitHub Issues.
-  - [ ] High-relevance context retrieval cross-referenced with the local `docs/` directory.
+  - [ ] Strict output constraints: AI explains code and provides schemas without overwriting core backend logic.
+  - [ ] Guided architectural planning and Socratic questioning skills.
+
+- [ ] **Phase 4: Deterministic Orchestration & GitHub Integration**
+  - [ ] Deterministic Markdown AST parsing (reads `docs/` as the single source of truth).
+  - [ ] GitHub MCP integration for project issue generation.
+  - [ ] Automated Git lifecycle management and task resolution tracking (PRs mapped directly to checklist items).
 
 ## Tech Stack
 
@@ -37,6 +36,21 @@ Built with Python, Textual, and LangChain DeepAgents, Socratic-PM enforces devel
 ## Documentation
 
 For detailed architectural schemas, data flows, and project requirements, please refer to the `docs/` directory:
+
 - [Product Requirements (PRD)](docs/prd.md)
 - [Architecture](docs/architecture.md)
 - [Implementation Plan](docs/plan.md)
+
+---
+
+### Roadmap
+
+Completion Goal: 5/31/26
+
+Phase 1: due: 4/18
+
+Phase 2: due 4/25
+
+Phase 3: due 5/9
+
+Phase 4: due 5/23
