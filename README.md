@@ -1,36 +1,42 @@
 # Socratic-PM
 
-This terminal based Orchestration Tool sits between the human engineer and their fleet of AI Agents (Claude, Cursor, Jules, Warp) to manage the "Meta-Work": package depencies, tool configurations, and project level logic planning. 
+Socratic-PM is an asynchronous, terminal-based Project Manager and educational constraint engine for AI-assisted development. It sits between the human engineer and their local/remote AI agent fleet to manage the "Meta-Work"—environment configurations, package dependencies, and deterministic project planning.
 
-## Status & Checklist
+Built with Python, Textual, and LangChain DeepAgents, Socratic-PM enforces developer accountability. Instead of "vibe coding" backend logic, the AI acts as a senior architect: explaining concepts, providing API contracts, and ensuring the human engineer types the code to build deep codebase comprehension.
 
-- [ ] **Phase 1: TUI Chat Bot**
-  - [ ] DeepAgent integration for stateful loops.
-  - [ ] Basic TUI for env status
-     
-- [ ] **Phase 2: Data Pipelines**
-  - [ ] Pipeline to get packages from package managers in global or env
-  - [ ] Pipeline to get configs from coding tools in global or env
-  - [ ] TUI pages to manage configs
-        
-- [ ] **Phase 3: GraphRAG**
-  - [ ] Neo4j GraphRAG setup to distinguish libraries vs coding tools
-  - [ ] Neo4j GraphRAG two databases, temp for env repos, global for global
-  - [ ] Open up tool in a repo and view graph for that repo in temp and also view global 
-  - [ ] Agent ability to utilize GraphRAG and set skills for code assist and dependency management
-  - [ ] temp store update workflow
-        
-- [ ] **Phase 4: Orchestrator**
-  - [ ] Github connection and TUI settings page
-  - [ ] Systematic Github orchestration protocols for Human Agent collaboration
-  - [ ] Agent can create an issues, assign issues, review prs, and manage branches. Local and Remote.
-        
-- [ ] **Phase 5: Thought Provoking Project Manager**
-  - [ ] Skills to ask engineers proper questions and follow structured guide to solving problems
-  - [ ] Skills to utilize the graphRAG to get docs and api code to give to the engineer
+## Features & Roadmap
+
+- [ ] **Phase 1: Concurrency Runtime & TUI**
+  - [ ] Asynchronous LangChain DeepAgents background worker queue.
+  - [ ] Terminal UI (Textual) with a dedicated code viewer and editor layout.
+  - [ ] Real-time environment telemetry (Git status, package managers, tool configs).
+  - [ ] DeepAgents skills middleware for slash commands (e.g., `/npm`, `/docs`).
+
+- [ ] **Phase 2: Project Management & Orchestration**
+  - [ ] GitHub MCP integration for issue generation.
+  - [ ] Deterministic Markdown AST parsing (reads `docs/` as the single source of truth).
+  - [ ] Automated Git lifecycle management and task resolution tracking (PRs mapped to checklist items).
+
+- [ ] **Phase 3: Educational Constraint Engine (Socratic Method)**
+  - [ ] Strict output constraints: AI explains code and provides schemas, but does not overwrite core backend logic.
+  - [ ] Guided architectural planning skills executed layer-by-layer.
+  - [ ] Structural codebase breakdowns and function mapping.
+
+- [ ] **Phase 4: Knowledge Graph (GraphRAG)**
+  - [ ] Neo4j-backed database separating generic documentation from exact API references.
+  - [ ] GraphRAG query injection into sub-agent GitHub Issues.
+  - [ ] High-relevance context retrieval cross-referenced with the local `docs/` directory.
 
 ## Tech Stack
 
-**Framework:** Langchain deepagents
-**GraphRAG:** Neo4j
-**Interface:** Textual
+- **Agent Framework:** LangChain DeepAgents
+- **Terminal Interface:** Textual (Python)
+- **Knowledge Graph (GraphRAG):** Neo4j
+- **Delegation/Orchestration:** GitHub MCP / PyGithub
+
+## Documentation
+
+For detailed architectural schemas, data flows, and project requirements, please refer to the `docs/` directory:
+- [Product Requirements (PRD)](docs/prd.md)
+- [Architecture](docs/architecture.md)
+- [Implementation Plan](docs/plan.md)
