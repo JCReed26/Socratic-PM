@@ -62,7 +62,7 @@ Then write your `docs/plan.md` and run `/socratic-pm ingest` to build the knowle
 
 ## The Five Engines
 
-### 1. GraphRAG — Real Schema Design
+### 1. GraphRAG
 
 Socratic-PM builds and queries a Neo4j knowledge graph with a strict node schema:
 
