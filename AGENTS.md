@@ -9,8 +9,6 @@ Strict operating procedures for AI agents functioning within the `Socratic-PM` r
 - Core orchestration and GitHub issue generation logic.
 
 **Permitted Write Domain:**
-- `src/tui/`: Frontend Terminal User Interface components written in Python/Textual.
-- Markdown files (when instructed to update documentation states).
 
 ## 2. Orchestration & State
 - All task state is deterministic and derived from the `docs/` directory.
