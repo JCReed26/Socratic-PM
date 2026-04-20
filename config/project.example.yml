@@ -1,0 +1,24 @@
+# Socratic-PM Project Configuration
+# Copy this file to config/project.yml and fill in your project details.
+
+# Project Identity
+project_name: "my-app"                  # Short name, used in logging
+repo: "https://github.com/user/my-app"  # Repository URL for GitHub MCP
+
+# Development Environment
+primary_language: "python"  # or: javascript, go, rust, etc.
+package_manager: "uv"       # or: npm, pip, poetry, pnpm, etc.
+
+# Framework Stack (for context mode Neo4j queries)
+frameworks:
+  - name: "langgraph"
+    version: "0.2.0"
+  - name: "next.js"
+    version: "15.0"
+
+# Neo4j Connection (Phase 3+, required for context/ingest modes)
+neo4j_uri: "bolt://localhost:7687"
+neo4j_database: "neo4j"
+
+# Developer Role (learning focus)
+developer_role: "ai-engineering"  # or: "frontend", "backend", "full-stack", etc.
