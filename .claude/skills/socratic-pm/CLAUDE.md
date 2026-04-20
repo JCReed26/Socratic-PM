@@ -34,13 +34,14 @@ Run on every `/socratic-pm` invocation:
 
 ## File Index
 
+**Within Skill (`.claude/skills/socratic-pm/`):**
 ```
 .claude/skills/socratic-pm/
 ├── SKILL.md                    → Router + mode registry
-├── CLAUDE.md                   → This file
+├── CLAUDE.md                   → This file (data contract)
 ├── modes/
 │   ├── _shared.md              → Constraints, schema, conventions (always injected)
-│   ├── _context.template.md    → User fills with project identity
+│   ├── _context.template.md    → Template: user copies to project root as modes/_context.md
 │   ├── plan.md                 → Mode: view plan status
 │   ├── issue.md                → Mode: create issues
 │   ├── checkpoint.md           → Mode: close issues, check plan
@@ -50,6 +51,23 @@ Run on every `/socratic-pm` invocation:
 │   ├── review.md               → Mode: code review
 │   ├── debug.md                → Mode: Socratic debugging
 │   └── status.md               → Mode: telemetry + drift
+├── scripts/
+│   ├── __init__.py             → Package marker
+│   ├── telemetry.py            → Zero-LLM environment telemetry (called by status mode)
+│   ├── plan_parser.py           → Phase 4+ (plan checklist parser)
+│   └── ingest.py                → Phase 3+ (Neo4j ingestion)
 └── config/
-    └── project.example.yml     → Template: user copies to project.yml
+    └── project.example.yml     → Template: user copies to project root as `config/project.yml`
+
+**At Project Root (user-created from skill templates):**
+```
+project-root/
+├── docs/
+│   ├── plan.md                 → Checklist source of truth (user creates/maintains)
+│   ├── prd.md                  → Requirements context (user creates/maintains)
+│   └── updates.md              → Environment tracking (user creates from skill template)
+├── config/
+│   └── project.yml             → Project config (user creates by copying `project.example.yml` from skill)
+└── data/
+    └── issues.md               → Issue mapping (created by issue mode at runtime)
 ```

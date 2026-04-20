@@ -63,8 +63,14 @@ RETURN api.signature, api.params, api.return_type
 
 ## File Path Reference (All Modes)
 
+**At Project Root** (user creates from skill templates):
 - `docs/plan.md` — source of truth checklist
 - `docs/prd.md` — requirements context
-- `docs/updates.md` — version tracking for env drift detection
-- `data/issues.md` — issue-to-item mapping (created by issue mode)
-- `config/project.yml` — project config (user fills from example)
+- `docs/updates.md` — version tracking for env drift detection (copy from skill's `../docs/updates.md`)
+- `data/issues.md` — issue-to-item mapping (created by issue mode at runtime)
+- `config/project.yml` — project config (user copies from skill's `../config/project.example.yml`)
+
+**Within Skill** (relative references):
+- `../scripts/telemetry.py` — called by status mode
+- `../config/project.example.yml` — template for user's project config
+- `../docs/updates.md` — template for user's environment tracking

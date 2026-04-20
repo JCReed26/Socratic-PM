@@ -9,13 +9,19 @@ Display current environment state and flag deviations from expected (docs/update
 
 ## Process
 
-1. Run `scripts/telemetry.py` to gather: git branch, uncommitted changes, Python version, Node version, installed packages
+1. Run `../scripts/telemetry.py` (within skill) to gather: git branch, uncommitted changes, Python version, Node version, installed packages
 2. Parse JSON output
-3. Compare against expected state in `docs/updates.md`
-4. Output readable report to chat with drift warnings:
-   - ⚠️ Python 3.11.x but docs/updates.md expects 3.12.x
+3. Compare against expected state in `../docs/updates.md` (project root)
+4. Read user's `config/project.yml` (project root, user-created copy of `../config/project.example.yml`)
+5. Output readable report to chat with drift warnings:
+   - ⚠️ Python 3.11.x but `../docs/updates.md` expects 3.12.x
    - ⚠️ Branch: phase-2/feature but uncommitted changes: 3 files
    - ✅ langgraph 0.2.0 matches expected
+
+**Path Clarification:**
+- `../scripts/telemetry.py` — Within skill directory (`.claude/skills/socratic-pm/scripts/`)
+- `../docs/updates.md` — User creates at project root (copy from skill's example)
+- `config/project.yml` — User creates at project root (copy from `../config/project.example.yml`)
 
 ## Example Output
 
