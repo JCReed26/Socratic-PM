@@ -18,15 +18,15 @@ Strict sequential phases. Each phase is independently testable before moving for
 
 ---
 
-## Phase 2: Telemetry Script
+## Phase 2: Telemetry Script ✅
 
 **Goal:** A standalone, zero-LLM Python script that outputs valid JSON. Fully testable without the plugin.
 
-- [ ] Write `scripts/telemetry.py`: detect git branch, uncommitted count, Python version, Node version, active venv, installed packages (pip/poetry/uv), presence of key config files.
-- [ ] Output strict JSON schema: `{ git_branch, uncommitted_changes, python_version, node_version, package_manager, installed_packages: [], active_tools: [], env_drift_warnings: [] }`.
-- [ ] Implement env drift detection: read `docs/updates.md` entries, compare against detected versions, populate `env_drift_warnings`.
-- [ ] Implement `modes/status.md`: call `scripts/telemetry.py` via bash, parse JSON output, format as readable chat report with drift warnings flagged.
-- [ ] Verify: `python scripts/telemetry.py` produces valid JSON in a clean terminal. `/socratic-pm status` renders the report in chat correctly.
+- [x] Write `scripts/telemetry.py`: detect git branch, uncommitted count, Python version, Node version, active venv, installed packages (pip/poetry/uv), presence of key config files.
+- [x] Output strict JSON schema: `{ git_branch, uncommitted_changes, python_version, node_version, package_manager, installed_packages: [], active_tools: [], env_drift_warnings: [] }`.
+- [x] Implement env drift detection: read `docs/updates.md` entries, compare against detected versions, populate `env_drift_warnings`.
+- [x] Implement `modes/status.md`: call `scripts/telemetry.py` via bash, parse JSON output, format as readable chat report with drift warnings flagged.
+- [x] Verify: `python scripts/telemetry.py` produces valid JSON in a clean terminal. `/socratic-pm status` renders the report in chat correctly.
 
 ---
 
